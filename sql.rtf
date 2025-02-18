@@ -1,0 +1,102 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset178 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\ltrpar\sa200\sl276\slmult1\f0\fs22\lang9 CREATE TABLE `azooz`.`courses` (`course_id` INT(10) NOT NULL , `course_name` VARCHAR(10) NOT NULL , `course_code` INT(10) NOT NULL , `credit` VARCHAR(10) NOT NULL , `department` VARCHAR(10) NOT NULL , PRIMARY KEY (`course_id`)) ENGINE = InnoDB; \par
+\par
+\par
+CREATE TABLE `azooz`.`instructors:` (`instructor_id` INT NOT NULL , `first_name` VARCHAR NOT NULL , `last_name` VARCHAR NOT NULL , `email` VARCHAR NOT NULL , `hire_date` DATE NOT NULL , `department` VARCHAR NOT NULL , PRIMARY KEY (`instructor_id`)) ENGINE = InnoDB; \par
+\par
+\par
+CREATE TABLE `azooz`.`enrollments` (`enrollment_id` INT(10) NOT NULL , `student_id` INT(10) NOT NULL , `course_id` INT(10) NOT NULL , `grade` VARCHAR(10) NOT NULL , PRIMARY KEY (`enrollment_id`)) ENGINE = InnoDB; \par
+\par
+CREATE TABLE `azooz`.`course assignments` (`assignment_id` INT NOT NULL , `instructor_id` INT NOT NULL , `course_id` INT NOT NULL , `semester` VARCHAR NOT NULL , `year` INT NOT NULL , PRIMARY KEY (`assignment_id`)) ENGINE = InnoDB; \par
+\par
+\par
+INSERT INTO Students (first_name, last_name, email, date_of_birth, gender, major, enrollment_year) VALUES\par
+('Ali', 'Khalid', 'ali.khalid@example.com', '2001-05-12', 'Male', 'Computer Science', 2020),\par
+('Mona', 'Salih', 'mona.salih@example.com', '2000-08-22', 'Female', 'Mathematics', 2019),\par
+('Ahmed', 'Hassan', 'ahmed.hassan@example.com', '2002-02-15', 'Male', 'Physics', 2021),\par
+('Sara', 'Ibrahim', 'sara.ibrahim@example.com', '2001-07-09', 'Female', 'Engineering', 2020),\par
+('Omar', 'Nasser', 'omar.nasser@example.com', '1999-12-25', 'Male', 'Business', 2018),\par
+('Lina', 'Ziad', 'lina.ziad@example.com', '2003-04-18', 'Female', 'Chemistry', 2022),\par
+('Hussein', 'Mohammed', 'hussein.mohammed@example.com', '2000-09-30', 'Male', 'Medicine', 2019),\par
+('Fatima', 'Adnan', 'fatima.adnan@example.com', '2001-11-11', 'Female', 'Biology', 2020),\par
+('Jamal', 'Tariq', 'jamal.tariq@example.com', '2002-06-05', 'Male', 'Economics', 2021),\par
+('Rania', 'Fadel', 'rania.fadel@example.com', '2000-03-17', 'Female', 'History', 2019);\par
+\par
+-- \f1\rtlch\lang11265\'c5\'cf\'ce\'c7\'e1 \'c7\'e1\'c8\'ed\'c7\'e4\'c7\'ca \'dd\'ed \'cc\'cf\'e6\'e1 \'c7\'e1\'cf\'e6\'d1\'c7\'ca\f0\ltrch\lang1033\par
+INSERT INTO Courses (course_name, course_code, credits, department) VALUES\par
+('Database Systems', 'CS\f1\rtlch\lang11265 101\f0\ltrch\lang1033 ', \f1\rtlch\lang11265 3\f0\ltrch\lang1033 , 'Computer Science'),\par
+('Linear Algebra', 'MATH\f1\rtlch\lang11265 201\f0\ltrch\lang1033 ', \f1\rtlch\lang11265 4\f0\ltrch\lang1033 , 'Mathematics'),\par
+('Quantum Physics', 'PHYS\f1\rtlch\lang11265 301\f0\ltrch\lang1033 ', \f1\rtlch\lang11265 3\f0\ltrch\lang1033 , 'Physics'),\par
+('Thermodynamics', 'ENG\f1\rtlch\lang11265 202\f0\ltrch\lang1033 ', \f1\rtlch\lang11265 3\f0\ltrch\lang1033 , 'Engineering'),\par
+('Business Management', 'BUS\f1\rtlch\lang11265 101\f0\ltrch\lang1033 ', \f1\rtlch\lang11265 3\f0\ltrch\lang1033 , 'Business');\par
+\par
+-- \f1\rtlch\lang11265\'c5\'cf\'ce\'c7\'e1 \'c7\'e1\'c8\'ed\'c7\'e4\'c7\'ca \'dd\'ed \'cc\'cf\'e6\'e1 \'c7\'e1\'e3\'cf\'d1\'d3\'ed\'e4\f0\ltrch\lang1033\par
+INSERT INTO Instructors (first_name, last_name, email, hire_date, department) VALUES\par
+('Salim', 'Karim', 'salim.karim@example.com', '\f1\rtlch\lang11265 2010-09-01\f0\ltrch\lang1033 ', 'Computer Science'),\par
+('Nada', 'Othman', 'nada.othman@example.com', '\f1\rtlch\lang11265 2015-06-15\f0\ltrch\lang1033 ', 'Mathematics'),\par
+('Tariq', 'Jamal', 'tariq.jamal@example.com', '\f1\rtlch\lang11265 2012-04-10\f0\ltrch\lang1033 ', 'Physics'),\par
+('Hana', 'Fawzi', 'hana.fawzi@example.com', '\f1\rtlch\lang11265 2018-11-20\f0\ltrch\lang1033 ', 'Engineering'),\par
+('Othman', 'Saad', 'othman.saad@example.com', '\f1\rtlch\lang11265 2009-02-25\f0\ltrch\lang1033 ', 'Business');\par
+\par
+-- \f1\rtlch\lang11265\'ca\'da\'ed\'ed\'e4 \'c7\'e1\'e3\'cf\'d1\'d3\'ed\'e4 \'e1\'e1\'cf\'e6\'d1\'c7\'ca\f0\ltrch\lang1033\par
+INSERT INTO CourseAssignments (instructor_id, course_id, semester, year) VALUES\par
+(\f1\rtlch\lang11265 1\f0\ltrch\lang1033 , \f1\rtlch\lang11265 1\f0\ltrch\lang1033 , 'Fall', \f1\rtlch\lang11265 2024\f0\ltrch\lang1033 ),\par
+(\f1\rtlch\lang11265 2\f0\ltrch\lang1033 , \f1\rtlch\lang11265 2\f0\ltrch\lang1033 , 'Spring', \f1\rtlch\lang11265 2024\f0\ltrch\lang1033 ),\par
+(\f1\rtlch\lang11265 3\f0\ltrch\lang1033 , \f1\rtlch\lang11265 3\f0\ltrch\lang1033 , 'Fall', \f1\rtlch\lang11265 2024\f0\ltrch\lang1033 ),\par
+(\f1\rtlch\lang11265 4\f0\ltrch\lang1033 , \f1\rtlch\lang11265 4\f0\ltrch\lang1033 , 'Spring', \f1\rtlch\lang11265 2024\f0\ltrch\lang1033 ),\par
+(\f1\rtlch\lang11265 5\f0\ltrch\lang1033 , \f1\rtlch\lang11265 5\f0\ltrch\lang1033 , 'Fall', \f1\rtlch\lang11265 2024\f0\ltrch\lang1033 );\par
+\par
+-- \f1\rtlch\lang11265\'ca\'d3\'cc\'ed\'e1 \'c7\'e1\'d8\'e1\'c7\'c8 \'dd\'ed \'c7\'e1\'cf\'e6\'d1\'c7\'ca (\'df\'e1 \'d8\'c7\'e1\'c8 \'e3\'d3\'cc\'e1 \'dd\'ed \'cf\'e6\'d1\'ca\'ed\'e4 \'da\'e1\'ec \'c7\'e1\'c3\'de\'e1)\f0\ltrch\lang1033\par
+INSERT INTO Enrollments (student_id, course_id, grade) VALUES\par
+(\f1\rtlch\lang11265 1\f0\ltrch\lang1033 , \f1\rtlch\lang11265 1\f0\ltrch\lang1033 , 'A'), (\f1\rtlch\lang11265 1\f0\ltrch\lang1033 , \f1\rtlch\lang11265 2\f0\ltrch\lang1033 , 'B'),\par
+(\f1\rtlch\lang11265 2\f0\ltrch\lang1033 , \f1\rtlch\lang11265 3\f0\ltrch\lang1033 , 'B'), (\f1\rtlch\lang11265 2\f0\ltrch\lang1033 , \f1\rtlch\lang11265 4\f0\ltrch\lang1033 , 'A'),\par
+(\f1\rtlch\lang11265 3\f0\ltrch\lang1033 , \f1\rtlch\lang11265 5\f0\ltrch\lang1033 , 'C'), (\f1\rtlch\lang11265 3\f0\ltrch\lang1033 , \f1\rtlch\lang11265 1\f0\ltrch\lang1033 , 'A'),\par
+(\f1\rtlch\lang11265 4\f0\ltrch\lang1033 , \f1\rtlch\lang11265 2\f0\ltrch\lang1033 , 'B'), (\f1\rtlch\lang11265 4\f0\ltrch\lang1033 , \f1\rtlch\lang11265 3\f0\ltrch\lang1033 , 'A'),\par
+(\f1\rtlch\lang11265 5\f0\ltrch\lang1033 , \f1\rtlch\lang11265 4\f0\ltrch\lang1033 , 'C'), (\f1\rtlch\lang11265 5\f0\ltrch\lang1033 , \f1\rtlch\lang11265 5\f0\ltrch\lang1033 , 'B'),\par
+(\f1\rtlch\lang11265 6\f0\ltrch\lang1033 , \f1\rtlch\lang11265 1\f0\ltrch\lang1033 , 'A'), (\f1\rtlch\lang11265 6\f0\ltrch\lang1033 , \f1\rtlch\lang11265 2\f0\ltrch\lang1033 , 'B'),\par
+(\f1\rtlch\lang11265 7\f0\ltrch\lang1033 , \f1\rtlch\lang11265 3\f0\ltrch\lang1033 , 'C'), (\f1\rtlch\lang11265 7\f0\ltrch\lang1033 , \f1\rtlch\lang11265 4\f0\ltrch\lang1033 , 'B'),\par
+(\f1\rtlch\lang11265 8\f0\ltrch\lang1033 , \f1\rtlch\lang11265 5\f0\ltrch\lang1033 , 'A'), (\f1\rtlch\lang11265 8\f0\ltrch\lang1033 , \f1\rtlch\lang11265 1\f0\ltrch\lang1033 , 'C'),\par
+(\f1\rtlch\lang11265 9\f0\ltrch\lang1033 , \f1\rtlch\lang11265 2\f0\ltrch\lang1033 , 'B'), (\f1\rtlch\lang11265 9\f0\ltrch\lang1033 , \f1\rtlch\lang11265 3\f0\ltrch\lang1033 , 'A'),\par
+(\f1\rtlch\lang11265 10\f0\ltrch\lang1033 , \f1\rtlch\lang11265 4\f0\ltrch\lang1033 , 'C'), (\f1\rtlch\lang11265 10\f0\ltrch\lang1033 , \f1\rtlch\lang11265 5\f0\ltrch\lang1033 , 'B');\f1\rtlch\lang11265\par
+\par
+\f0\ltrch\lang1033\par
+SELECT `student_id`, COUNT(`student_id`) FROM students GROUP BY `student_id`;\lang9\par
+\lang1033 SELECT COUNT(*) AS total_courses FROM Courses;\f1\rtlch\lang11265\par
+\f0\ltrch\lang1033\par
+SELECT S.first_name, S.last_name FROM Students S\par
+JOIN Enrollments E ON S.student_id = E.student_id\par
+WHERE E.course_id = (SELECT course_id FROM Courses WHERE course_name = 'Quantum Physics');\par
+\par
+SELECT email FROM Instructors WHERE department = 'Computer Science';\par
+\par
+\par
+SELECT C.course_name, COUNT(E.student_id) AS enrolled_students\par
+FROM Courses C\par
+LEFT JOIN Enrollments E ON C.course_id = E.course_id\par
+GROUP BY C.course_name;\par
+\par
+\par
+---------------------------------------------------------------------------------------------------------------------\par
+SELECT C.course_name, I.first_name, I.last_name\par
+FROM CourseAssignments CA\par
+JOIN Courses C ON CA.course_id = C.course_id\par
+JOIN Instructors I ON CA.instructor_id = I.instructor_id\par
+WHERE CA.semester = 'Fall' AND CA.year = 2024;\par
+\par
+\par
+\par
+\par
+\par
+SELECT C.course_name, AVG(CASE \par
+    WHEN E.grade = 'A' THEN \f1\rtlch\lang11265 4.0 \f0\ltrch\lang1033\par
+    WHEN E.grade = 'B' THEN \f1\rtlch\lang11265 3.0 \f0\ltrch\lang1033\par
+    WHEN E.grade = 'C' THEN \f1\rtlch\lang11265 2.0 \f0\ltrch\lang1033\par
+    ELSE \f1\rtlch\lang11265 0 \f0\ltrch\lang1033 END) AS average_grade\par
+FROM Courses C\par
+JOIN Enrollments E ON C.course_id = E.course_id\par
+WHERE C.course_name = 'Database Systems'\par
+GROUP BY C.course_name;\par
+\lang9\par
+}
+ 
